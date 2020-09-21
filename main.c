@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "personaje.h"
 
 int main ()
 {
@@ -9,7 +10,7 @@ int main ()
     do
     {
         printf("Elija una de las siguientes opciones: \n\n");
-        printf("1.- Capturar entero \n\n 2.- Mostrar cadena \n\n 3. Personaje \n\n 0. Salir \n\n");
+        printf("1.- Capturar entero \n\n 2.- Mostrar cadena \n\n 3. Capturar personaje \n\n 4. Mostrar personaje \n\n 0. Salir \n\n");
         scanf("%c", opcion);
 
         fflush (stdin);
@@ -32,10 +33,15 @@ int main ()
             break;
 
         case '3':
-            personaje();
+            captura_personajes();
 
             break;
 
+        case '4':
+            mostrar_personaje();
+
+            break;
+            
         default:
             break;
         }
@@ -75,9 +81,4 @@ void mostrar(int n, char cadena [])
         printf("%s \n\n", cadena);
     }
     
-}
-
-void personaje()
-{
-
 }
