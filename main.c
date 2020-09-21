@@ -3,6 +3,8 @@
 int main ()
 {
     char opcion;
+    char cadena [25];
+    int n;
 
     do
     {
@@ -20,7 +22,12 @@ int main ()
             break;
 
         case '2':
-            mostrar();
+            printf("Coloca una cadena de hasta veinticinco caracteres \n\n");
+            fflush(stdin);
+            fgets(cadena, sizeof(cadena), stdin);
+            printf("Cololca el numero de veces que quieres que se imprima la cadena\n\n");
+            scanf("%i", &n);
+            mostrar(n, cadena);
 
             break;
 
@@ -40,39 +47,33 @@ int main ()
 void enteros()
 {
     int enteros[5];
-
-    for (size_t i = 0; i < sizeof(enteros); i++)
-    {
-        scanf("%i", &enteros[i]);
-    }
-    for (size_t i = 0; i < sizeof(enteros); i++)
-    {
-        printf("%i \n\n", &enteros[i]);
-    }
-    
-}
-
-void mostrar()
-{
-    int enteros[5];
     int promedio;
     int suma = 0;
 
-    for (size_t i = 0; i < sizeof(enteros); i++)
+    for (size_t i = 0; i < 5; i++)
     {
         scanf("%i", &enteros[i]);
     }
-    for (size_t i = 0; i < sizeof(enteros); i++)
+    for (size_t i = 0; i < 5; i++)
     {
         printf("%i \n\n", &enteros[i]);
     }
-    for (size_t i = 0; i < sizeof(enteros); i++)
+    for (size_t i = 0; i < 5; i++)
     {
         suma = suma + enteros[i];
     }
 
     printf("Suma: %i \n\n", suma);
-    printf("Promedio: %i \n\n", suma/sizeof(enteros));
+    printf("Promedio: %i \n\n", suma/5);
+    
+}
+
+void mostrar(int n, char cadena [])
+{
+    for (size_t i = 0; i < n; i++)
+    {
+        printf("%s \n\n", cadena);
+    }
     
 }
 
